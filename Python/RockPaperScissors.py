@@ -1,12 +1,27 @@
 # https://www.youtube.com/watch?v=eWRfhZUzrAc&list=PLIyH1NEzrU5j9LB4zFv-c7SU0UMd4vp4z&index=1&ab_channel=freeCodeCamp.org
 
-# variables and functions
+# Imports a list of instrucitons into our program.
+import random # This module implements pseudo-random number generators for various distributions.
+              
+# Variables and functions.
+def get_choices(): # Created function "get_choices" and assigned variable.
+    player_choice = input("Enter a choice, rock, paper or scissors ") # Created input variable "player_Choice" and assigning the users input (\n creates a new line in the console).
+    options = ["rock", "paper", "scissors"]
+    computer_choice = random.choice(options) # Created variable "computer_choice" and assigned a random string from "options".
+    choices = {"player": player_choice, "computer": computer_choice} # Ceating a variable with a dictionary of {key: value, key: value}.
 
-def get_choices(): # created function "get_choices" and assigned variable
-    player_choice = input("Enter a choice, rock, paper or scissors \n") # created input variable "player_Choice" and assigning the users input (\n creates a new line in the console)
-    computer_choice = "paper" # created variable "computer_choice" and assigned "paper"
-    choices = {"player": player_choice, "computer": computer_choice} # ceating a variable with a dictionary of {key: value, key: value}
+    return choices # When "get_choices" is called, the "return" function will output "choices".
 
-    return choices # when the "get_choices" funstion is called the "choices" dictionary is returned
-
-get_choices()
+# Function arguments.
+def check_win(player, computer): # Created function "check_win" reuiring 2 pieces of data.
+    # Contcatenating strings combining strings with variables.
+    print(f"You chose {player}\nYour opponent chose {computer}") 
+    # If statement will allow a program to execute different tasks under certain conditions.
+    if player == computer: # Comparing values between the variables "player" and "computer".
+        return "It's a tie" # If both "player" and "computer" chose the same option.
+    elif player == "rock" and computer == "scissors":
+        return "Rock beats scissors You win!"
+    
+    # Else and elif statements will allow a program to execute different tasks under certain conditions if it does not meet the previous if, elif, else statements requirments.
+    
+check_win("rock", "paper")
