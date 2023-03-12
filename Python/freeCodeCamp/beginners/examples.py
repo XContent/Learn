@@ -36,3 +36,8 @@ elif age > 1:
     print("your a child")
 else:
     print("you are a baby")
+
+
+# Accessing dictionaries.
+choices = {"player": "rock", "computer": "paper"} # Ceating a variable with a dictionary of {key: value, key: value}.
+player_choice = choices["player"] # Calling variable value from dictionary with get bracket [key] function.

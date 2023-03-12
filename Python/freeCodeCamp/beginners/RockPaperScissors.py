@@ -19,9 +19,28 @@ def check_win(player, computer): # Created function "check_win" reuiring 2 piece
     # If statement will allow a program to execute different tasks under certain conditions.
     if player == computer: # Comparing values between the variables "player" and "computer".
         return "It's a tie" # If both "player" and "computer" chose the same option.
-    elif player == "rock" and computer == "scissors":
-        return "Rock beats scissors You win!"
+    elif player == "rock":
+        if computer == "scissors": # Nested if statement.
+            return "Rock beats scissors You win!"
+        else:
+            return "paper covers rock, you lose"
+    elif player == computer:
+        return "It's a tie"
+    elif player == "paper":
+        if computer == "rock":
+            return "paper coveres rock, You win!"
+        else:
+            return "scissors cuts paper, you lose"
+    elif player == computer:
+        return "It's a tie"
+    elif player == "scissors":
+        if computer == "paper":
+            return "scissors cuts paper, you win!"
+        else:
+            return "Rock beats scissors, You lose"
     
     # Else and elif statements will allow a program to execute different tasks under certain conditions if it does not meet the previous if, elif, else statements requirments.
     
-check_win("rock", "paper")
+choices = get_choices()
+result = check_win(choices["player"], choices["computer"])
+print(result)
